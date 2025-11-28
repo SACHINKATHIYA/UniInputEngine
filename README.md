@@ -168,7 +168,7 @@ After checking the event number via `/proc/bus/input/devices`, you can use `evte
 > sudo dnf install evtest
 >
 > # Arch Linux
-> sudo pacman -S evtest
+> sudo pacman -Sy evtest
 > ```
 For example:
 
