@@ -43,3 +43,32 @@ It uses the **Linux input subsystem** to generate input events directly from the
   - Buttons: from `BTN_0` to `BTN_9`
 
 - Works on most Linux distributions with proper kernel headers.
+
+## Requirements
+
+- Linux kernel 6.14 or newer  
+- GCC 13 or newer, or the GCC version used to build your running kernel  
+- Make  
+- Linux kernel headers for the running kernel (usually preinstalled on Ubuntu)
+> **Note:** Tested on Linux kernel 6.14.0-35-generic (Linux kernel 6.14) on Ubuntu 24.04.3 LTS
+
+---
+  
+## Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/s-r-e-e-r-a-j/UniInputEngine.git
+ ```
+2. **Go to the UniInputEngine directory:**
+```bash
+cd UniInputEngine
+```
+3. **Give execute permission to the `install.sh` script:**
+```bash
+chmod +x install.sh
+```
+4. **Build and install:**
+```bash
+sudo ./install.sh
+```
