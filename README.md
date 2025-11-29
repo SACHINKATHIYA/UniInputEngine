@@ -6,6 +6,8 @@ It uses the **Linux input subsystem** to generate input events directly from the
 ## features 
 - Auto-loads at boot using `/etc/modules-load.d/uniinputengine.conf`.
 
+- Thread-safe input emission using kernel mutexes
+
 - **Creates multiple virtual input devices**
   - Virtual keyboard  
   - Virtual mouse  
