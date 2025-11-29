@@ -142,7 +142,7 @@ B: KEY=3ff 0 0 0 0
 
 > **Device Event Numbers:**  
 > Each virtual device created by UniInputEngine has a specific event number shown in the `Handlers` line of `/proc/bus/input/devices`.  
-> This event number corresponds to the `/dev/input/eventX` file used to send input to that device.  
+> This event number corresponds to the `/dev/input/eventX` file used to send input to that device and read input events coming from that device.  
 > 
 > **Important:** Event numbers can change after a reboot. Always check the current numbers using:
 > 
